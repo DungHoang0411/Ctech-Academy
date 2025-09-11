@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Tức | Ctech Academy</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="news.css">
+</head>
+<body class="bg-gray-50 text-gray-800 page-tin-tuc">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex-1">
+                <a href="index.html">
+                    <img src="IMG/CTECH ACADEMY - Fintech.png" alt="Logo Ctech Academy" class="logo">
+                </a>
+            </div>
+
+            <div class="hidden md:flex items-center justify-center gap-8">
+                <div class="relative group">
+                    <a href="index.html#khoa-hoc" class="text-gray-600 hover:text-blue-600 transition duration-300 flex items-center gap-1 cursor-pointer">
+                        Khóa đào tạo
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 mt-0.1 w-48 bg-white rounded-md shadow-lg py-1 z-20 hidden group-hover:block transition-all duration-300">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">AI BK</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Luyện AI</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">AI phễu</a>
+                    </div>
+                </div>
+                <a href="news.html" class="text-blue-600 font-semibold transition duration-300">Tin tức</a>
+                <a href="#lien-he" class="text-gray-600 hover:text-blue-600 transition duration-300">Liên hệ</a>
+            </div>
+            
+            <div class="flex-1"></div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="featured-post" class="mb-16">
+            <a href="chi-tiet-tin-tuc.html" class="featured-card group">
+                <div class="featured-image-wrapper">
+                    <img src="IMG_NEWS/BK.jpg" alt="Hình ảnh bài viết nổi bật" class="featured-image">
+                </div>
+                <div class="featured-content">
+                    <p class="post-category">Sự Kiện</p>
+                    <h2 class="post-title">Khóa học fintech cùng với trường Đại học Bách Khoa Hà Nội</h2>
+                    <p class="post-excerpt">BƯỚC VÀO THẾ GIỚI FINTECH CÙNG ĐẠI HỌC BÁCH KHOA HÀ NỘI. Bạn muốn dẫn đầu xu hướng công nghệ tài chính? Đừng bỏ lỡ Khóa học Fintech ngắn hạn tại CTECH Academy...</p>
+                    <span class="read-more">Đọc thêm &rarr;</span>
+                </div>
+            </a>
+        </section>
+
+        <section id="other-news">
+            <h3 class="section-title">Các tin khác</h3>
+            
+            <div class="news-grid">
+                <div class="news-card">
+                    <a href="chi-tiet-tin-tuc.html" class="block">
+                        <img src="IMG_NEWS/Blockchain.jpg" alt="Tiêu đề tin tức" class="card-image">
+                        <div class="card-content">
+                            <p class="post-category">Học Thuật</p>
+                            <h4 class="card-title">Workshop "Xây dựng Ứng dụng Blockchain đầu tiên"</h4>
+                            <p class="card-excerpt">Buổi workshop chuyên sâu cung cấp kiến thức nền tảng và kinh nghiệm thực chiến...</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="news-card">
+                    <a href="chi-tiet-tin-tuc.html" class="block">
+                        <img src="IMG_NEWS/Hutech_1.jpg" alt="Tiêu đề tin tức" class="card-image">
+                        <div class="card-content">
+                            <p class="post-category">Hợp Tác Doanh Nghiệp</p>
+                            <h4 class="card-title">Giới thiệu khóa học Fintech tại sự kiện HUTECH SHOW</h4>
+                            <p class="card-excerpt">Khóa học Fintech đã thu hút sự quan tâm từ các bạn sinh viên tại đây...</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="news-card">
+                    <a href="chi-tiet-tin-tuc.html" class="block">
+                        <img src="https://placehold.co/600x400/E2E8F0/334155?text=Ảnh+Tin+Tức" alt="Tiêu đề tin tức" class="card-image">
+                        <div class="card-content">
+                            <p class="post-category">Tuyển Sinh</p>
+                            <h4 class="card-title">Thông báo tuyển sinh khóa mới năm 2025</h4>
+                            <p class="card-excerpt">Thông tin chi tiết về các ngành học, chỉ tiêu và phương thức xét tuyển...</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="lien-he" class="bg-gray-800 text-white mt-16">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Ctech Academy</h3>
+                    <p class="text-gray-400">Nơi chắp cánh cho những ước mơ, kiến tạo tương lai bền vững cho thế hệ trẻ Việt Nam.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Liên kết nhanh</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Trang chủ</a></li>
+                        <li><a href="index.html#khoa-hoc" class="text-gray-400 hover:text-white">Chương trình đào tạo</a></li>
+                        <li><a href="news.html" class="text-gray-400 hover:text-white">Tin tức & Sự kiện</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Thông tin liên hệ</h3>
+                    <p class="text-gray-400 mb-2">Địa chỉ: [Số nhà, Đường, Phường, Quận, Thành phố]</p>
+                    <p class="text-gray-400 mb-2">Email: tuyensinh@ctech.edu.vn</p>
+                    <p class="text-gray-400">Hotline: 1900 XXXX</p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-500">
+                <p>&copy; 2025 Ctech Academy. Bảo lưu mọi quyền.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
