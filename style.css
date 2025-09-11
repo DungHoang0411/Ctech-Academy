@@ -14,11 +14,12 @@ body {
     width: auto;
 }
 .hero-section {
-    background-image: url('IMG/headbg.jpg');
+    background-image: url('IMG/main.png');
     background-size: cover;
     background-position: center;
     padding: 5rem 0; /* Giữ khoảng cách trên và dưới */
-    height: 500px; /* Chiều cao cố định */
+    height: 750px; /* Chiều cao cố định */
+    margin-top: 10px;
 }
 
 .connecting-line {
@@ -33,3 +34,5 @@ body {
     font-size: 1.125rem; /* Tăng kích thước đoạn văn */
     line-height: 1.6;
 }
+
+/* Dấu ngoặc nhọn thừa đã được xóa */
