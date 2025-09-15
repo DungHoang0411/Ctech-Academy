@@ -39,96 +39,75 @@ body {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('IMG/DK2.jpg') no-repeat center center;
     background-size: cover;
 }
-/* ============================================= */
-/* ==   HIỆU ỨNG NÚT ĐĂNG KÝ (ĐÃ SỬA LỖI)     == */
-/* ============================================= */
+/* =================================================== */
+/* ==   HIỆU ỨNG NÚT PHÁO HOA LIÊN TỤC (FINAL)       == */
+/* =================================================== */
 
 .sparkle-button {
-    /* Thiết lập cơ bản cho nút */
     position: relative;
     display: inline-block;
     padding: 1rem 2rem;
     font-size: 1.125rem;
     font-weight: 600;
     color: white;
-    background-color: #2563EB; /* Màu blue-600 */
+    background-color: #2563EB;
     border-radius: 0.5rem;
     text-decoration: none;
-    overflow: hidden;
+    overflow: visible; /* Cho phép pháo hoa bay ra ngoài */
     cursor: pointer;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-
-    /* Kích hoạt hiệu ứng "thở" */
-    animation: pulse 2s infinite;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    /* Bỏ animation pulse ở đây để tập trung vào hiệu ứng pháo hoa */
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4), 0 4px 6px -4px rgba(37, 99, 235, 0.4);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
-}
-
-/* Lớp nền mờ phía sau */
-.sparkle-button .backdrop {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: #4f85f5;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 1; /* Nằm dưới chữ và tia sáng */
-}
-
-/* Đảm bảo chữ của nút luôn ở trên cùng */
-.sparkle-button .button-text {
+.sparkle-button .button-text, .sparkle-button .backdrop {
     position: relative;
-    z-index: 2; /* Nằm trên lớp nền mờ */
+    z-index: 2;
 }
 
-/* Tia sáng */
+/* Áp dụng animation liên tục cho các hạt pháo hoa */
 .sparkle-button .spark {
     position: absolute;
-    width: 4px;
-    height: 150%;
-    background-color: #93c5fd;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
     opacity: 0;
-    z-index: 2; /* Cũng nằm trên lớp nền mờ */
-    transform-origin: center;
+    pointer-events: none;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+
+    /* THAY ĐỔI QUAN TRỌNG: Áp dụng animation trực tiếp, không cần hover */
+    animation-duration: 2s; /* Tăng thời gian để hiệu ứng mượt hơn */
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite; /* Lặp lại vô hạn */
 }
 
-/* Hiệu ứng khi di chuột vào */
-.sparkle-button:hover .backdrop {
-    opacity: 0.2;
-}
+/* Đặt tên animation, màu sắc và ĐỘ TRỄ khác nhau cho từng hạt */
+/* Độ trễ khác nhau sẽ tạo ra hiệu ứng pháo hoa nổ liên tục không đồng bộ */
+.sparkle-button .spark:nth-of-type(1)  { animation-name: fw-1; background-color: #fef08a; animation-delay: 0s; }
+.sparkle-button .spark:nth-of-type(2)  { animation-name: fw-2; background-color: #a7f3d0; animation-delay: 0.2s; }
+.sparkle-button .spark:nth-of-type(3)  { animation-name: fw-3; background-color: #f9a8d4; animation-delay: 0.4s; }
+.sparkle-button .spark:nth-of-type(4)  { animation-name: fw-4; background-color: #fef08a; animation-delay: 0.6s; }
+.sparkle-button .spark:nth-of-type(5)  { animation-name: fw-5; background-color: #a7f3d0; animation-delay: 0.8s; }
+.sparkle-button .spark:nth-of-type(6)  { animation-name: fw-6; background-color: #f9a8d4; animation-delay: 1s; }
+.sparkle-button .spark:nth-of-type(7)  { animation-name: fw-7; background-color: #fef08a; animation-delay: 1.2s; }
+.sparkle-button .spark:nth-of-type(8)  { animation-name: fw-8; background-color: #a7f3d0; animation-delay: 1.4s; }
+.sparkle-button .spark:nth-of-type(9)  { animation-name: fw-9; background-color: #f9a8d4; animation-delay: 1.6s; }
+.sparkle-button .spark:nth-of-type(10) { animation-name: fw-10; background-color: #fef08a; animation-delay: 1.8s; }
+.sparkle-button .spark:nth-of-type(11) { animation-name: fw-11; background-color: #a7f3d0; animation-delay: 1.9s; }
+.sparkle-button .spark:nth-of-type(12) { animation-name: fw-12; background-color: #f9a8d4; animation-delay: 2s; }
 
-.sparkle-button:hover .spark {
-    opacity: 1;
-    animation: sparkle 0.8s ease-out;
-}
-
-/* Vị trí và độ trễ của từng tia sáng */
-.sparkle-button .spark:nth-of-type(1) { top: -25%; left: 15%; animation-delay: 0s; }
-.sparkle-button .spark:nth-of-type(2) { top: -25%; left: 85%; animation-delay: 0.2s; }
-.sparkle-button .spark:nth-of-type(3) { top: -25%; left: 40%; animation-delay: 0.4s; }
-.sparkle-button .spark:nth-of-type(4) { top: -25%; left: 60%; animation-delay: 0.6s; }
-
-/* Animation của tia sáng */
-@keyframes sparkle {
-    0% {
-        transform: translateY(0) rotate(0deg) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(80px) rotate(40deg) scale(0);
-        opacity: 0;
-    }
-}
+/* Các Keyframes cho từng hướng bay (vẫn giữ nguyên) */
+@keyframes fw-1  { 0% { opacity: 1; transform: translate(-50%, -50%) scale(0.5); } 100% { opacity: 0; transform: translate(calc(-50% + 80px), -50%) scale(1); } }
+@keyframes fw-2  { 0% { opacity: 1; transform: translate(-50%, -50%) scale(0.5); } 100% { opacity: 0; transform: translate(calc(-50% + 56px), calc(-50% + 56px)) scale(1); } }
+@keyframes fw-3  { 0% { opacity: 1; transform: translate(-50%, -50%) scale(0.5); } 100% { opacity: 0; transform: translate(-50%, calc(-50% + 80px)) scale(1); } }
+@keyframes fw-4  { 0% { opacity: 1; transform: translate(-50%, -50%) scale(0.5); } 100% { opacity: 0; transform: translate(calc(-50% - 56px), calc(-50% + 56px)) scale(1); } }
+@keyframes fw-5  { 0% { opacity: 1; transform: translate(-50%, -50%) scale(0.5); } 100% { opacity: 0; transform: translate(calc(-50% - 80px), -50%) scale(1); } }
+@keyframes fw-6  { 0% { opacity: 1; transform: translate(-50%, -50%) scale(0.5); } 100% { opacity: 0; transform: translate(calc(-50% - 56px), calc(-50% - 56px)) scale(1); } }
+@keyframes fw-7  { 0% { opacity: 1; transform: translate(-50%, -50%) scale(0.5); } 100% { opacity: 0; transform: translate(-50%, calc(-50% - 80px)) scale(1); } }
+@keyframes fw-8  { 0% { opacity: 1; transform: translate(-50%, -50%) scale(0.5); } 100% { opacity: 0; transform: translate(calc(-50% + 56px), calc(-50% - 56px)) scale(1); } }
+@keyframes fw-9  { 0% { opacity: 1; transform: translate(-50%, -50%) scale(0.5); } 100% { opacity: 0; transform: translate(calc(-50% + 31px), calc(-50% + 74px)) scale(1); } }
+@keyframes fw-10 { 0% { opacity: 1; transform: translate(-50%, -50%) scale(0.5); } 100% { opacity: 0; transform: translate(calc(-50% - 31px), calc(-50% - 74px)) scale(1); } }
+@keyframes fw-11 { 0% { opacity: 1; transform: translate(-50%, -50%) scale(0.5); } 100% { opacity: 0; transform: translate(calc(-50% - 74px), calc(-50% + 31px)) scale(1); } }
+@keyframes fw-12 { 0% { opacity: 1; transform: translate(-50%, -50%) scale(0.5); } 100% { opacity: 0; transform: translate(calc(-50% + 74px), calc(-50% - 31px)) scale(1); } }
