@@ -1,0 +1,134 @@
+/* Custom Styles */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x1080/334155/ffffff?text=Khuôn+viên+trường') no-repeat center center;
+    background-size: cover;
+}
+
+/* CSS cho logo */
+.logo {
+    height: 60px; /* Bạn có thể điều chỉnh chiều cao này cho phù hợp */
+    width: auto;
+}
+.hero-section {
+    background-image: url('IMG/main.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 0; /* Giữ khoảng cách trên và dưới */
+    height: 700px; /* Chiều cao cố định */
+    margin-top: 15px;
+}
+
+.connecting-line {
+    transform: translateY(-50%);
+}
+#nganh-hoc h2 {
+    font-size: 2.5rem; /* Tăng kích thước tiêu đề */
+    line-height: 1.3; /* Điều chỉnh khoảng cách giữa các dòng */
+}
+
+#nganh-hoc p {
+    font-size: 1.125rem; /* Tăng kích thước đoạn văn */
+    line-height: 1.6;
+}
+    /* CSS cho phần đăng ký */
+#dang-ky {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('IMG/DK2.jpg') no-repeat center center;
+    background-size: cover;
+}
+/* ============================================= */
+/* ==   HIỆU ỨNG NÚT ĐĂNG KÝ (ĐÃ SỬA LỖI)     == */
+/* ============================================= */
+
+.sparkle-button {
+    /* Thiết lập cơ bản cho nút */
+    position: relative;
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    background-color: #2563EB; /* Màu blue-600 */
+    border-radius: 0.5rem;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+
+    /* Kích hoạt hiệu ứng "thở" */
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4), 0 4px 6px -4px rgba(37, 99, 235, 0.4);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Lớp nền mờ phía sau */
+.sparkle-button .backdrop {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #4f85f5;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1; /* Nằm dưới chữ và tia sáng */
+}
+
+/* Đảm bảo chữ của nút luôn ở trên cùng */
+.sparkle-button .button-text {
+    position: relative;
+    z-index: 2; /* Nằm trên lớp nền mờ */
+}
+
+/* Tia sáng */
+.sparkle-button .spark {
+    position: absolute;
+    width: 4px;
+    height: 150%;
+    background-color: #93c5fd;
+    opacity: 0;
+    z-index: 2; /* Cũng nằm trên lớp nền mờ */
+    transform-origin: center;
+}
+
+/* Hiệu ứng khi di chuột vào */
+.sparkle-button:hover .backdrop {
+    opacity: 0.2;
+}
+
+.sparkle-button:hover .spark {
+    opacity: 1;
+    animation: sparkle 0.8s ease-out;
+}
+
+/* Vị trí và độ trễ của từng tia sáng */
+.sparkle-button .spark:nth-of-type(1) { top: -25%; left: 15%; animation-delay: 0s; }
+.sparkle-button .spark:nth-of-type(2) { top: -25%; left: 85%; animation-delay: 0.2s; }
+.sparkle-button .spark:nth-of-type(3) { top: -25%; left: 40%; animation-delay: 0.4s; }
+.sparkle-button .spark:nth-of-type(4) { top: -25%; left: 60%; animation-delay: 0.6s; }
+
+/* Animation của tia sáng */
+@keyframes sparkle {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(80px) rotate(40deg) scale(0);
+        opacity: 0;
+    }
+}
